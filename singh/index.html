@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rishabh & Akanksha</title>
+<meta name="description" content="You're invited to the wedding of Rishabh Singh and Akanksha Godbole, 25 & 26 November 2026, Kalyan.">
+<meta property="og:title" content="Rishabh & Akanksha">
+<meta property="og:description" content="25 & 26 November 2026, Kalyan West. Tap to open your invitation.">
+<meta property="og:image" content="images/invitation.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf5ee;
+    --sandstone: #f1dfd2;
+    --plum: #5a1f2e;
+    --lotus: #c95f73;
+    --gold: #a87b3d;
+    --pond: #3f7f7c;
+    --ink: #3d2a2a;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--sandstone);
+    color: var(--ink);
+    font: 400 1.18rem/1.65 "Cormorant Garamond", Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body.locked { overflow: hidden; }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--pond); outline-offset: 3px; }
+
+  /* ---------- the door ---------- */
+  #doors {
+    position: fixed; inset: 0; z-index: 10;
+    display: grid; place-items: center;
+    background: var(--sandstone);
+    perspective: 1600px;
+    transition: opacity .9s ease 1.3s, visibility 0s 2.2s;
+  }
+  #doors .frame {
+    position: relative;
+    height: 100dvh; width: min(100vw, 56.25dvh);
+    display: flex; border: 0; padding: 0; background: none; cursor: pointer; font: inherit;
+  }
+  #doors .half { position: relative; flex: 1; overflow: hidden; transition: transform 1.8s cubic-bezier(.6,.05,.25,1); }
+  #doors .half img { position: absolute; top: 0; height: 100%; width: 200%; max-width: none; object-fit: cover; }
+  #doors .left { transform-origin: left center; }
+  #doors .right { transform-origin: right center; }
+  #doors .right img { left: -100%; }
+  #doors .label {
+    position: absolute; left: 0; right: 0; bottom: 6%;
+    text-align: center; color: var(--plum); pointer-events: none;
+    transition: opacity .4s;
+  }
+  #doors .label strong { display: block; font: 400 clamp(1.5rem, 6vw, 2rem) "Marcellus", serif; letter-spacing: .04em; }
+  #doors .label span { display: inline-block; margin-top: .3rem; font-style: italic; animation: breathe 2.4s ease-in-out infinite; }
+  @keyframes breathe { 50% { opacity: .45; } }
+  #doors.open .left { transform: rotateY(-108deg); }
+  #doors.open .right { transform: rotateY(108deg); }
+  #doors.open .label { opacity: 0; }
+  #doors.open { opacity: 0; visibility: hidden; pointer-events: none; }
+
+  /* ---------- page column ---------- */
+  main {
+    max-width: 520px; margin: 0 auto;
+    background: var(--paper);
+    box-shadow: 0 0 60px rgba(90, 31, 46, .08);
+    text-align: center;
+  }
+  section { padding: 3.5rem 1.75rem; }
+  h2 {
+    margin: 0 0 1.25rem;
+    font: 400 1.9rem/1.2 "Marcellus", serif;
+    color: var(--plum);
+  }
+  .flourish { width: 120px; height: 14px; margin: 0 auto 1.5rem; color: var(--gold); }
+  .muted { color: #7a6260; }
+
+  /* hero */
+  .hero { padding: 0 0 3rem; }
+  .hero .monogram { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center 45%; }
+  .hero h1 {
+    margin: -.5rem 0 .25rem;
+    font: 400 clamp(2.1rem, 9vw, 2.9rem)/1.1 "Marcellus", serif;
+    color: var(--plum); letter-spacing: .02em;
+  }
+  .hero h1 i { display: block; font: italic 400 1.5rem "Cormorant Garamond", serif; color: var(--gold); margin: .2rem 0; }
+  .hero .when { margin: 1rem 0 0; font-size: 1.25rem; }
+  .countdown { display: flex; justify-content: center; gap: 1.4rem; margin: 2rem 0 .5rem; }
+  .countdown div { min-width: 3.2rem; }
+  .countdown b { display: block; font: 400 2.2rem/1 "Marcellus", serif; color: var(--pond); font-variant-numeric: tabular-nums; }
+  .countdown small { font-size: .95rem; color: #7a6260; }
+
+  /* invocation */
+  .invocation { background: var(--sandstone); }
+  .deva { font-family: "Tiro Devanagari Sanskrit", serif; color: var(--plum); }
+  .invocation .deva.title { font-size: 1.4rem; margin: 0 0 1rem; }
+  .invocation .deva.shloka { font-size: 1.15rem; line-height: 1.9; margin: 0 0 1.25rem; }
+
+  /* invitation card */
+  .card { padding: 0; }
+  .card img { width: 100%; }
+
+  /* story */
+  .story p { max-width: 34ch; margin: 0 auto 1rem; }
+
+  /* events */
+  .events { padding-left: 1rem; padding-right: 1rem; background: var(--sandstone); }
+  .event { margin: 0 0 2.75rem; }
+  .event:last-child { margin-bottom: 0; }
+  .event figure { position: relative; margin: 0; border-radius: 6px; overflow: hidden; }
+  .event figcaption {
+    position: absolute; left: 12%; right: 12%; top: var(--top, 14%);
+    color: var(--plum);
+  }
+  .event h3 { margin: 0 0 .6rem; font: 400 clamp(1.45rem, 6vw, 1.8rem)/1.2 "Marcellus", serif; }
+  .event .details { padding: 1.1rem .5rem 0; }
+  .event .details p { margin: 0; line-height: 1.5; font-weight: 500; }
+  .event .muhurat { margin-top: .5rem; color: var(--lotus); }
+  .event .tagline { font-style: italic; font-weight: 400; margin-bottom: .6rem; color: #7a6260; }
+
+  .btn {
+    display: inline-block; margin: 1rem .35rem 0;
+    padding: .5rem 1.2rem;
+    border: 1px solid var(--gold); border-radius: 999px;
+    color: var(--plum); text-decoration: none; font-weight: 600; font-size: 1.05rem;
+    background: var(--paper);
+  }
+  .btn:hover { background: var(--plum); border-color: var(--plum); color: var(--paper); }
+
+  /* venues */
+  .venue { margin: 0 0 2.25rem; }
+  .venue:last-child { margin-bottom: 0; }
+  .venue h3 { margin: 0; font: 400 1.45rem "Marcellus", serif; color: var(--plum); }
+  .venue p { margin: .2rem 0 0; }
+
+  /* compliments + rsvp */
+  .compliments { background: var(--sandstone); }
+  .compliments p { margin: 0 0 1rem; font-size: 1.3rem; }
+  .rsvp .person { margin: 0 0 1.75rem; }
+  .rsvp .person:last-child { margin-bottom: 0; }
+  .rsvp .name { font-size: 1.3rem; color: var(--plum); font-weight: 600; margin: 0; }
+
+  /* closing */
+  .closing { padding: 4rem 1.75rem 4.5rem; background: var(--plum); color: var(--sandstone); }
+  .closing h2 { color: var(--paper); font-size: 2.1rem; }
+  .closing .btn { background: transparent; color: var(--paper); border-color: var(--gold); }
+  .closing .btn:hover { background: var(--gold); }
+  .closing small { display: block; margin-top: 2.5rem; color: #d9bfb4; font-size: 1rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    #doors .half { transition: none; }
+    #doors.open .left, #doors.open .right { transform: none; }
+    #doors { transition: opacity .4s, visibility 0s .4s; }
+    #doors .label span { animation: none; }
+  }
+</style>
+</head>
+<body class="locked">
+
+<div id="doors">
+  <button class="frame" type="button" aria-label="Open the invitation">
+    <span class="half left"><img src="images/door.jpg" alt=""></span>
+    <span class="half right"><img src="images/door.jpg" alt=""></span>
+    <span class="label">
+      <strong>Rishabh &amp; Akanksha</strong>
+      <span>Tap the doors to open</span>
+    </span>
+  </button>
+</div>
+
+<main>
+  <header class="hero">
+    <img class="monogram" src="images/monogram.jpg" alt="AR monogram in gold with pink flowers">
+    <h1>Rishabh <i>with</i> Akanksha</h1>
+    <p class="when">25 &amp; 26 November 2026<br>Kalyan West</p>
+    <div class="countdown" id="countdown" aria-live="off">
+      <div><b data-u="d">0</b><small>days</small></div>
+      <div><b data-u="h">0</b><small>hours</small></div>
+      <div><b data-u="m">0</b><small>minutes</small></div>
+      <div><b data-u="s">0</b><small>seconds</small></div>
+    </div>
+    <p class="muted" id="countdown-note">until the muhurat, 9:15 AM on 26 November</p>
+  </header>
+
+  <section class="invocation">
+    <p class="deva title">॥ श्री गणेशाय नमः ॥</p>
+    <p class="deva shloka">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</p>
+    <p class="muted">We seek the divine blessings of Lord Ganesha for a joyous beginning and a blessed journey ahead.</p>
+  </section>
+
+  <section class="card">
+    <img src="images/invitation.jpg" alt="With the divine blessings of our Kuldevi, Shitla Mata, and the love and blessings of our elders, Shri Rajendra Ramroop Singh and Smt. Chhaya Singh cordially invite you to the wedding of their beloved son Rishabh Singh with Akanksha Godbole, daughter of Shri Mahendra Godbole and Smt. Tejaswini Godbole.">
+  </section>
+
+  <section class="story">
+    <svg class="flourish" viewBox="0 0 120 14" aria-hidden="true"><path d="M0 7h48M72 7h48" stroke="currentColor"/><path d="M60 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
+    <h2>Two souls, one journey</h2>
+    <p>Across different paths, languages and customs, our hearts found a home in each other.</p>
+    <p>Built on love, respect and shared values, we are delighted to celebrate this new chapter with our family and friends who have been a part of our journey.</p>
+    <p>Your presence, love and blessings mean the world to us.</p>
+  </section>
+
+  <section class="events" id="events">
+    <h2>Celebrations</h2>
+
+    <article class="event">
+      <figure>
+        <img src="images/sangeet.jpg" alt="Illustration of the couple dancing at the sangeet" width="720" height="1280">
+        <figcaption style="--top: 21%; left: 19%; right: 19%">
+          <h3>Tilak, Mehendi &amp; Sangeet</h3>
+        </figcaption>
+      </figure>
+      <div class="details">
+        <p class="tagline">An evening of music, joy and togetherness as we begin the celebrations.</p>
+        <p>Wednesday, 25 November 2026<br>3:00 PM onwards<br>Nakshatra Banquets, Kalyan West</p>
+      </div>
+      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Tilak%2C+Mehendi+%26+Sangeet+%E2%80%93+Rishabh+%26+Akanksha&amp;dates=20261125T093000Z/20261125T173000Z&amp;location=Nakshatra+Banquets%2C+Kalyan+West" target="_blank" rel="noopener">Add to Google Calendar</a>
+    </article>
+
+    <article class="event">
+      <figure>
+        <img src="images/marathi-vivah.jpg" alt="Illustration of the couple in Marathi wedding attire" width="853" height="1280">
+        <figcaption style="--top: 6%; left: 17%; right: 17%">
+          <h3>Haldi &amp; Marathi Vivah</h3>
+        </figcaption>
+      </figure>
+      <div class="details">
+        <p class="tagline">A sacred union of traditions, blessings and new beginnings.</p>
+        <p>Thursday, 26 November 2026<br>6:00 AM to 3:00 PM<br>Nakshatra Banquets, Kalyan West</p>
+        <p class="muhurat">Muhurat: 9:15 AM</p>
+      </div>
+      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Haldi+%26+Marathi+Vivah+%E2%80%93+Rishabh+%26+Akanksha&amp;dates=20261126T003000Z/20261126T093000Z&amp;details=Muhurat+at+9%3A15+AM&amp;location=Nakshatra+Banquets%2C+Kalyan+West" target="_blank" rel="noopener">Add to Google Calendar</a>
+    </article>
+
+    <article class="event">
+      <figure>
+        <img src="images/wedding.jpg" alt="Illustration of the couple in North Indian wedding attire beneath a sandstone arch" width="720" height="1280">
+        <figcaption style="--top: 15%">
+          <h3>North Indian Wedding &amp; Reception</h3>
+        </figcaption>
+      </figure>
+      <div class="details">
+        <p class="tagline">An evening to celebrate love, traditions and forever together.</p>
+        <p>Thursday, 26 November 2026<br>3:00 PM to 11:00 PM<br>Saxena Lawns, Kalyan West</p>
+      </div>
+      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=North+Indian+Wedding+%26+Reception+%E2%80%93+Rishabh+%26+Akanksha&amp;dates=20261126T093000Z/20261126T173000Z&amp;location=Saxena+Lawns%2C+Kalyan+West" target="_blank" rel="noopener">Add to Google Calendar</a>
+    </article>
+  </section>
+
+  <section class="venues" id="venues">
+    <h2>Venues</h2>
+    <!-- ponytail: Maps search links until the exact pins arrive from the family -->
+    <div class="venue">
+      <h3>Nakshatra Banquets</h3>
+      <p>Kalyan West</p>
+      <p class="muted">Tilak, Mehendi, Sangeet, Haldi &amp; Marathi Vivah</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Nakshatra+Banquets+Kalyan+West" target="_blank" rel="noopener">Get directions</a>
+    </div>
+    <div class="venue">
+      <h3>Saxena Lawns</h3>
+      <p>Kalyan West</p>
+      <p class="muted">North Indian Wedding &amp; Reception</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Saxena+Lawns+Kalyan+West" target="_blank" rel="noopener">Get directions</a>
+    </div>
+  </section>
+
+  <section class="compliments">
+    <h2>With best compliments from</h2>
+    <p>Smt. Chhaya Singh &amp; Shri Rajendra Ramroop Singh</p>
+    <p>Ramroop Singh and Family</p>
+    <p>Hariprasad Singh and Family</p>
+  </section>
+
+  <section class="rsvp" id="rsvp">
+    <h2>Kindly grace us with your presence</h2>
+    <p class="muted">Your love, blessings and good wishes are the greatest gift to us. To let us know you're coming, call or message:</p>
+    <div class="person">
+      <p class="name">Rajendra Ramroop Singh</p>
+      <a class="btn" href="tel:+917790803265">Call</a>
+      <a class="btn" href="https://wa.me/917790803265" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <div class="person">
+      <p class="name">Mahendra Godbole</p>
+      <a class="btn" href="tel:+919372905720">Call</a>
+      <a class="btn" href="https://wa.me/919372905720" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </section>
+
+  <footer class="closing">
+    <h2>Together in love,<br>forever in gratitude</h2>
+    <a class="btn" href="invite.ics" download="rishabh-akanksha-wedding.ics">Add all events to my calendar</a>
+    <small>Rishabh &amp; Akanksha, 25 &amp; 26 November 2026</small>
+  </footer>
+</main>
+
+<script>
+  var doors = document.getElementById('doors');
+  doors.querySelector('button').addEventListener('click', function () {
+    doors.classList.add('open');
+    document.body.classList.remove('locked');
+  });
+
+  var muhurat = new Date('2026-11-26T09:15:00+05:30');
+  var parts = {};
+  document.querySelectorAll('#countdown b').forEach(function (b) { parts[b.dataset.u] = b; });
+  function tick() {
+    var s = Math.floor((muhurat - Date.now()) / 1000);
+    if (s <= 0) {
+      document.getElementById('countdown').hidden = true;
+      document.getElementById('countdown-note').textContent = 'Thank you for celebrating with us.';
+      return;
+    }
+    parts.d.textContent = Math.floor(s / 86400);
+    parts.h.textContent = Math.floor(s / 3600) % 24;
+    parts.m.textContent = Math.floor(s / 60) % 60;
+    parts.s.textContent = s % 60;
+    setTimeout(tick, 1000);
+  }
+  tick();
+</script>
+</body>
+</html>
