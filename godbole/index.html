@@ -172,6 +172,18 @@
   .invite .person-name { margin: 0; font: 400 2.1rem/1.2 "Marcellus", serif; color: var(--plum); }
   .invite .kin { margin: .4rem auto 0; max-width: 32ch; }
   .invite .with { margin: 1.25rem 0; font: italic 400 1.5rem "Cormorant Garamond", serif; color: var(--gold); }
+  /* itinerary inside an event */
+  .event .schedule { list-style: none; margin: .9rem 0 0; padding: 0; }
+  .event .schedule li { margin: 0 0 .7rem; line-height: 1.4; }
+  .event .schedule b { display: block; font-weight: 600; color: var(--plum); }
+  .event .plain {
+    padding: 2.25rem 1.25rem 1.5rem;
+    border: 1px solid var(--gold); border-radius: 6px;
+    background: var(--paper);
+  }
+  .event .plain h3 { color: var(--plum); }
+  .event .plain .details { padding-top: 0; }
+  .event .day { margin: 0 0 .25rem; font-weight: 600; }
 </style>
 </head>
 <body class="locked">
@@ -191,7 +203,7 @@
   <header class="hero">
     <img class="monogram" src="images/monogram.jpg" alt="AR monogram in gold with pink flowers">
     <h1>Akanksha <i>with</i> Rishabh</h1>
-    <p class="when">26 November 2026, Kalyan<br>Reception 6 December 2026, Bengaluru</p>
+    <p class="when">25 &amp; 26 November 2026, Kalyan<br>Reception 6 December 2026, Bengaluru</p>
     <div class="countdown" id="countdown" aria-live="off">
       <div><b data-u="d">0</b><small>days</small></div>
       <div><b data-u="h">0</b><small>hours</small></div>
@@ -218,33 +230,95 @@
     <p class="kin muted">Son of Smt Chhaya Singh &amp; Shri Rajendra Ramroop Singh</p>
   </section>
 
+  <section class="story">
+    <svg class="flourish" viewBox="0 0 120 14" aria-hidden="true"><path d="M0 7h48M72 7h48" stroke="currentColor"/><path d="M60 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
+    <h2>Two souls, one journey</h2>
+    <p>Across different paths, languages and customs, our hearts found a home in each other.</p>
+    <p>Built on love, respect and shared values, we are delighted to celebrate this new chapter with our family and friends who have been a part of our journey.</p>
+    <p>Your presence, love and blessings mean the world to us.</p>
+  </section>
+
   <section class="events" id="events">
     <h2>Celebrations</h2>
+
+    <article class="event">
+      <div class="plain">
+        <h3>Welcome of the Groom, Simant Pujan &amp; Vangnischay</h3>
+        <div class="details">
+          <p class="day">Wednesday, 25 November 2026</p>
+          <p>4:00 PM to 6:30 PM<br>Nakshatra Banquet Hall, Kalyan</p>
+        </div>
+      </div>
+      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Simant+Pujan+%26+Vangnischay+%E2%80%93+Akanksha+%26+Rishabh&amp;dates=20261125T103000Z/20261125T130000Z&amp;details=Welcome+of+the+Groom%2C+Simant+Pujan+and+Vangnischay&amp;location=Nakshatra+Banquet+Hall%2C+Kalyan+Sports+Club%2C+Durgadi+Birla+College+Road%2C+Kalyan+West+421301" target="_blank" rel="noopener">Add to Google Calendar</a>
+    </article>
+
+    <article class="event">
+      <figure>
+        <img src="images/sangeet.jpg" alt="Illustration of the couple dancing at the sangeet" width="720" height="1280">
+        <figcaption style="--top: 21%; left: 19%; right: 19%">
+          <h3>Sangeet &amp; Mehendi</h3>
+        </figcaption>
+      </figure>
+      <div class="details">
+        <p class="day">Wednesday, 25 November 2026</p>
+        <ul class="schedule">
+          <li><b>7:30 PM onwards</b>Sangeet and Mehendi</li>
+          <li><b>8:30 PM onwards</b>Dinner</li>
+        </ul>
+        <p>Nakshatra Banquet Hall, Kalyan</p>
+      </div>
+      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Sangeet+%26+Mehendi+%E2%80%93+Akanksha+%26+Rishabh&amp;dates=20261125T140000Z/20261125T173000Z&amp;details=Sangeet+and+Mehendi+from+7%3A30+PM%2C+dinner+from+8%3A30+PM&amp;location=Nakshatra+Banquet+Hall%2C+Kalyan+Sports+Club%2C+Durgadi+Birla+College+Road%2C+Kalyan+West+421301" target="_blank" rel="noopener">Add to Google Calendar</a>
+    </article>
 
     <article class="event">
       <figure>
         <img src="images/marathi-vivah.jpg" alt="Illustration of the couple in Marathi wedding attire" width="853" height="1280">
         <figcaption style="--top: 6%; left: 17%; right: 17%">
-          <h3>Muhurat</h3>
+          <h3>Muhurat &amp; Wedding Ceremonies</h3>
         </figcaption>
       </figure>
       <div class="details">
-        <p>Thursday, 26 November 2026<br>9:15 AM</p>
+        <p class="day">Thursday, 26 November 2026</p>
+        <p class="muhurat">Muhurat: 9:15 AM</p>
+        <ul class="schedule">
+          <li><b>7:00 AM to 9:00 AM</b>Breakfast</li>
+          <li><b>8:30 AM to 9:15 AM</b>Mangalashtak and the auspicious wedding muhurat</li>
+          <li><b>9:30 AM to 11:00 AM</b>Blessings for the bride and groom from family and relatives</li>
+          <li><b>11:30 AM to 2:30 PM</b>Wedding ceremonies: Kanyadaan, Lajahom, Saptapadi, Sunmukh and Zhal</li>
+          <li><b>12:00 noon onwards</b>Lunch</li>
+          <li><b>2:30 PM to 3:00 PM</b>Vihinichi Pangat, a traditional feast for the parents of the bride and groom</li>
+        </ul>
         <p>Nakshatra Banquet Hall, Kalyan</p>
       </div>
-      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Muhurat+%E2%80%93+Akanksha+%26+Rishabh&amp;dates=20261126T034500Z/20261126T063000Z&amp;details=Muhurat+at+9%3A15+AM&amp;location=Nakshatra+Banquet+Hall%2C+Kalyan+Sports+Club%2C+Adharwadi%2C+Khadakpada%2C+Kalyan+421301" target="_blank" rel="noopener">Add to Google Calendar</a>
+      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Muhurat+%26+Wedding+Ceremonies+%E2%80%93+Akanksha+%26+Rishabh&amp;dates=20261126T013000Z/20261126T093000Z&amp;details=Muhurat+at+9%3A15+AM&amp;location=Nakshatra+Banquet+Hall%2C+Kalyan+Sports+Club%2C+Durgadi+Birla+College+Road%2C+Kalyan+West+421301" target="_blank" rel="noopener">Add to Google Calendar</a>
     </article>
 
     <article class="event">
       <figure>
-        <img src="images/sangeet.jpg" alt="Illustration of the couple celebrating together" width="720" height="1280">
-        <figcaption style="--top: 21%; left: 19%; right: 19%">
-          <h3>Reception</h3>
+        <img src="images/wedding.jpg" alt="Illustration of the couple in North Indian wedding attire beneath a sandstone arch" width="720" height="1280">
+        <figcaption style="--top: 15%">
+          <h3>Rajput Wedding &amp; Reception</h3>
         </figcaption>
       </figure>
       <div class="details">
-        <p>Sunday, 6 December 2026<br>11:00 AM</p>
-        <p>Vasavi Mahal, Bengaluru</p>
+        <p class="day">Thursday, 26 November 2026</p>
+        <ul class="schedule">
+          <li><b>4:00 PM to 6:00 PM</b>Wedding ceremonies as per Rajput traditions</li>
+          <li><b>7:30 PM onwards</b>Reception, followed by dinner</li>
+          <li><b>10:30 PM onwards</b>Bidaai</li>
+        </ul>
+        <p>Saxena Dream Lawns, Kalyan</p>
+      </div>
+      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Rajput+Wedding+%26+Reception+%E2%80%93+Akanksha+%26+Rishabh&amp;dates=20261126T103000Z/20261126T180000Z&amp;details=Rajput+wedding+ceremonies+4%E2%80%936+PM%2C+reception+and+dinner+from+7%3A30+PM%2C+bidaai+from+10%3A30+PM&amp;location=Saxena+Dream+Lawns%2C+Gandhari%2C+Barave+Road%2C+Opp.+Mahada+Colony%2C+Godrej+Hill%2C+Khadakpada%2C+Kalyan+421301" target="_blank" rel="noopener">Add to Google Calendar</a>
+    </article>
+
+    <article class="event">
+      <div class="plain">
+        <h3>Reception in Bengaluru</h3>
+        <div class="details">
+          <p class="day">Sunday, 6 December 2026</p>
+          <p>11:00 AM<br>Vasavi Mahal, Bengaluru</p>
+        </div>
       </div>
       <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Reception+%E2%80%93+Akanksha+%26+Rishabh&amp;dates=20261206T053000Z/20261206T093000Z&amp;location=Vasavi+Mahal%2C+4+Vanivilas+Road%2C+3rd+Floor%2C+VV+Puram%2C+Basavanagudi%2C+Bengaluru+560004" target="_blank" rel="noopener">Add to Google Calendar</a>
     </article>
@@ -254,14 +328,20 @@
     <h2>Venues</h2>
     <div class="venue">
       <h3>Nakshatra Banquet Hall</h3>
-      <p>Kalyan Sports Club, Adharwadi, Khadakpada, Kalyan 421 301, Maharashtra</p>
-      <p class="muted">Muhurat</p>
-      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Nakshatra+Banquet+Hall+Kalyan+Sports+Club+Adharwadi+Khadakpada+Kalyan+421301" target="_blank" rel="noopener">Get directions</a>
+      <p>Kalyan Sports Club, near Adharwadi Chowk, Durgadi Birla College Road, Kalyan West, Kalyan 421 301</p>
+      <p class="muted">Simant Pujan, Sangeet &amp; Mehendi, Muhurat &amp; wedding ceremonies</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Nakshatra+Banquet+Hall+Kalyan+Sports+Club+Durgadi+Birla+College+Road+Kalyan+West+421301" target="_blank" rel="noopener">Get directions</a>
+    </div>
+    <div class="venue">
+      <h3>Saxena Dream Lawns</h3>
+      <p>Gandhari, Barave Road, Opp. Mahada Colony, Godrej Hill, Khadakpada, Kalyan 421 301</p>
+      <p class="muted">Rajput wedding, reception &amp; bidaai</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Saxena+Dream+Lawns+Barave+Road+Godrej+Hill+Khadakpada+Kalyan+421301" target="_blank" rel="noopener">Get directions</a>
     </div>
     <div class="venue">
       <h3>Vasavi Mahal</h3>
       <p>4 Vanivilas Road, 3rd Floor (above Vasavi Convention Hall), VV Puram, Basavanagudi, Bengaluru 560 004</p>
-      <p class="muted">Reception</p>
+      <p class="muted">Reception in Bengaluru</p>
       <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Vasavi+Mahal+Vanivilas+Road+VV+Puram+Basavanagudi+Bengaluru+560004" target="_blank" rel="noopener">Get directions</a>
     </div>
   </section>
@@ -274,18 +354,24 @@
   <section class="rsvp" id="rsvp">
     <h2>Kindly grace us with your presence</h2>
     <p class="muted">Your love, blessings and good wishes are the greatest gift to us. To let us know you're coming, call or message:</p>
-    <p class="name">Sri Mahendra Godbole</p>
     <div class="person">
-      <p>+91 93729 05720</p>
-      <a class="btn" href="tel:+919372905720">Call</a>
-      <a class="btn" href="https://wa.me/919372905720" target="_blank" rel="noopener">WhatsApp</a>
+      <p class="name">Sri Mahendra Godbole</p>
+      <p>+91 98450 46767</p>
+      <a class="btn" href="tel:+919845046767">Call</a>
+      <a class="btn" href="https://wa.me/919845046767" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <div class="person">
+      <p class="name">Smt Tejaswini Godbole</p>
+      <p>+91 99455 67537</p>
+      <a class="btn" href="tel:+919945567537">Call</a>
+      <a class="btn" href="https://wa.me/919945567537" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </section>
 
   <footer class="closing">
     <h2>Together in love,<br>forever in gratitude</h2>
-    <a class="btn" href="invite.ics" download="akanksha-rishabh-wedding.ics">Add both events to my calendar</a>
-    <small>Akanksha &amp; Rishabh, 26 November 2026</small>
+    <a class="btn" href="invite.ics" download="akanksha-rishabh-wedding.ics">Add all events to my calendar</a>
+    <small>Akanksha &amp; Rishabh, 25 &amp; 26 November 2026</small>
   </footer>
 </main>
 <script>

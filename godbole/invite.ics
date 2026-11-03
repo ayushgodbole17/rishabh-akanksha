@@ -3,17 +3,44 @@ VERSION:2.0
 PRODID:-//Akanksha and Rishabh//Wedding//EN
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
+UID:simant-20261125@akanksha-rishabh
+DTSTAMP:20261104T000000Z
+DTSTART:20261125T103000Z
+DTEND:20261125T130000Z
+SUMMARY:Simant Pujan & Vangnischay – Akanksha & Rishabh
+DESCRIPTION:Welcome of the Groom\, Simant Pujan and Vangnischay
+LOCATION:Nakshatra Banquet Hall\, Kalyan Sports Club\, Durgadi Birla College Road\, Kalyan West 421301
+END:VEVENT
+BEGIN:VEVENT
+UID:sangeet-20261125@akanksha-rishabh
+DTSTAMP:20261104T000000Z
+DTSTART:20261125T140000Z
+DTEND:20261125T173000Z
+SUMMARY:Sangeet & Mehendi – Akanksha & Rishabh
+DESCRIPTION:Sangeet and Mehendi from 7:30 PM\, dinner from 8:30 PM
+LOCATION:Nakshatra Banquet Hall\, Kalyan Sports Club\, Durgadi Birla College Road\, Kalyan West 421301
+END:VEVENT
+BEGIN:VEVENT
 UID:muhurat-20261126@akanksha-rishabh
-DTSTAMP:20261103T000000Z
-DTSTART:20261126T034500Z
-DTEND:20261126T063000Z
-SUMMARY:Muhurat – Akanksha & Rishabh
+DTSTAMP:20261104T000000Z
+DTSTART:20261126T013000Z
+DTEND:20261126T093000Z
+SUMMARY:Muhurat & Wedding Ceremonies – Akanksha & Rishabh
 DESCRIPTION:Muhurat at 9:15 AM
-LOCATION:Nakshatra Banquet Hall\, Kalyan Sports Club\, Adharwadi\, Khadakpada\, Kalyan 421301
+LOCATION:Nakshatra Banquet Hall\, Kalyan Sports Club\, Durgadi Birla College Road\, Kalyan West 421301
+END:VEVENT
+BEGIN:VEVENT
+UID:rajput-20261126@akanksha-rishabh
+DTSTAMP:20261104T000000Z
+DTSTART:20261126T103000Z
+DTEND:20261126T180000Z
+SUMMARY:Rajput Wedding & Reception – Akanksha & Rishabh
+DESCRIPTION:Rajput wedding ceremonies 4-6 PM\, reception and dinner from 7:30 PM\, bidaai from 10:30 PM
+LOCATION:Saxena Dream Lawns\, Gandhari\, Barave Road\, Opp. Mahada Colony\, Godrej Hill\, Khadakpada\, Kalyan 421301
 END:VEVENT
 BEGIN:VEVENT
 UID:reception-20261206@akanksha-rishabh
-DTSTAMP:20261103T000000Z
+DTSTAMP:20261104T000000Z
 DTSTART:20261206T053000Z
 DTEND:20261206T093000Z
 SUMMARY:Reception – Akanksha & Rishabh
