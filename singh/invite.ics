@@ -4,27 +4,35 @@ PRODID:-//Rishabh and Akanksha//Wedding//EN
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:sangeet-20261125@rishabh-akanksha
-DTSTAMP:20261020T000000Z
+DTSTAMP:20261103T000000Z
 DTSTART:20261125T093000Z
 DTEND:20261125T173000Z
 SUMMARY:Tilak\, Mehendi & Sangeet – Rishabh & Akanksha
-LOCATION:Nakshatra Banquets\, Kalyan West
+LOCATION:Nakshatra Banquet Hall\, Kalyan Sports Club\, Adharwadi\, Khadakpada\, Kalyan 421301
 END:VEVENT
 BEGIN:VEVENT
 UID:vivah-20261126@rishabh-akanksha
-DTSTAMP:20261020T000000Z
-DTSTART:20261126T003000Z
-DTEND:20261126T093000Z
-SUMMARY:Haldi & Marathi Vivah – Rishabh & Akanksha
+DTSTAMP:20261103T000000Z
+DTSTART:20261126T034500Z
+DTEND:20261126T063000Z
+SUMMARY:Marathi Vivah – Rishabh & Akanksha
 DESCRIPTION:Muhurat at 9:15 AM
-LOCATION:Nakshatra Banquets\, Kalyan West
+LOCATION:Nakshatra Banquet Hall\, Kalyan Sports Club\, Adharwadi\, Khadakpada\, Kalyan 421301
+END:VEVENT
+BEGIN:VEVENT
+UID:ceremony-20261126@rishabh-akanksha
+DTSTAMP:20261103T000000Z
+DTSTART:20261126T093000Z
+DTEND:20261126T133000Z
+SUMMARY:Wedding Ceremony – Rishabh & Akanksha
+LOCATION:Saxena Lawns\, Gandhari Baruve Road\, Opp. Mahada Colony\, Godrej Hill\, Khadakpada\, Kalyan 421301
 END:VEVENT
 BEGIN:VEVENT
 UID:reception-20261126@rishabh-akanksha
-DTSTAMP:20261020T000000Z
-DTSTART:20261126T093000Z
+DTSTAMP:20261103T000000Z
+DTSTART:20261126T140000Z
 DTEND:20261126T173000Z
-SUMMARY:North Indian Wedding & Reception – Rishabh & Akanksha
-LOCATION:Saxena Lawns\, Kalyan West
+SUMMARY:Reception – Rishabh & Akanksha
+LOCATION:Saxena Lawns\, Gandhari Baruve Road\, Opp. Mahada Colony\, Godrej Hill\, Khadakpada\, Kalyan 421301
 END:VEVENT
 END:VCALENDAR
