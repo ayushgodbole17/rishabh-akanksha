@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Akanksha and Rishabh//Wedding//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:muhurat-20261126@akanksha-rishabh
+DTSTAMP:20261103T000000Z
+DTSTART:20261126T034500Z
+DTEND:20261126T063000Z
+SUMMARY:Muhurat – Akanksha & Rishabh
+DESCRIPTION:Muhurat at 9:15 AM
+LOCATION:Nakshatra Banquet Hall\, Kalyan Sports Club\, Adharwadi\, Khadakpada\, Kalyan 421301
+END:VEVENT
+BEGIN:VEVENT
+UID:reception-20261206@akanksha-rishabh
+DTSTAMP:20261103T000000Z
+DTSTART:20261206T053000Z
+DTEND:20261206T093000Z
+SUMMARY:Reception – Akanksha & Rishabh
+LOCATION:Vasavi Mahal\, 4 Vanivilas Road\, 3rd Floor\, VV Puram\, Basavanagudi\, Bengaluru 560004
+END:VEVENT
+END:VCALENDAR

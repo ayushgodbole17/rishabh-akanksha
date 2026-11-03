@@ -83,10 +83,14 @@
   .muted { color: #7a6260; }
 
   /* hero */
-  .hero { padding: 0 0 3rem; }
-  .hero .monogram { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center 45%; }
+  .hero { padding: 0 0 3rem; background: linear-gradient(to bottom, #f4eadb 0%, #f4eadb 45%, var(--paper) 100%); }
+  .hero .monogram {
+    width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center 45%;
+    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+  }
   .hero h1 {
-    margin: -.5rem 0 .25rem;
+    margin: -1.5rem 0 .25rem;
     font: 400 clamp(2.1rem, 9vw, 2.9rem)/1.1 "Marcellus", serif;
     color: var(--plum); letter-spacing: .02em;
   }
