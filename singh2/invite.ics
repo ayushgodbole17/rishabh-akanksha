@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Rishabh and Akanksha//Wedding//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:ceremony-20261126@rishabh-akanksha
+DTSTAMP:20261103T000000Z
+DTSTART:20261126T103000Z
+DTEND:20261126T123000Z
+SUMMARY:Wedding Ceremony – Rishabh & Akanksha
+LOCATION:Saxena Lawns\, Gandhari Baruve Road\, Opp. Mahada Colony\, Godrej Hill\, Khadakpada\, Kalyan 421301
+END:VEVENT
+BEGIN:VEVENT
+UID:reception-20261126@rishabh-akanksha
+DTSTAMP:20261103T000000Z
+DTSTART:20261126T140000Z
+DTEND:20261126T173000Z
+SUMMARY:Reception – Rishabh & Akanksha
+LOCATION:Saxena Lawns\, Gandhari Baruve Road\, Opp. Mahada Colony\, Godrej Hill\, Khadakpada\, Kalyan 421301
+END:VEVENT
+END:VCALENDAR
