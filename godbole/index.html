@@ -10,7 +10,7 @@
 <meta property="og:image" content="images/monogram.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@500&family=Marcellus&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
 <style>
   :root {
     --paper: #fbf5ee;
@@ -166,23 +166,30 @@
     #doors .label span { animation: none; }
   }
 
-  /* invitation text */
-  .invite .hosts { margin: 0 0 .5rem; font: 400 1.45rem/1.3 "Marcellus", serif; color: var(--plum); }
-  .invite .lead { margin: 0 0 2rem; }
-  .invite .person-name { margin: 0; font: 400 2.1rem/1.2 "Marcellus", serif; color: var(--plum); }
-  .invite .kin { margin: .4rem auto 0; max-width: 32ch; }
-  .invite .with { margin: 1.25rem 0; font: italic 400 1.5rem "Cormorant Garamond", serif; color: var(--gold); }
+  /* invitation card: Godbole wording set over the blank artwork, sized with the card */
+  .card figure { position: relative; margin: 0; container-type: inline-size; }
+  .card .wording {
+    position: absolute; left: 15%; right: 15%; top: 13.5%; height: 49.5%;
+    display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+    color: #3b1a1f;
+  }
+  .card .wording p { margin: 0; }
+  .card .om { font: 400 3.4cqw "Tiro Devanagari Sanskrit", serif; color: #6b4a2a; }
+  .card .rule { width: 26cqw; height: 2.2cqw; color: #b08a45; }
+  .card .deities { font: 600 3.9cqw/1.3 "Cormorant Garamond", serif; color: #9a6f2e; }
+  .card .hosts { font: 700 4.2cqw/1.2 "Cormorant Garamond", serif; }
+  .card .small { font: 500 3.2cqw/1.3 "Cormorant Garamond", serif; color: #4a3030; }
+  .card .name { font: 500 5.4cqw/1.1 "Cinzel", serif; letter-spacing: .02em; }
+  .card .name span { font-size: 1.3em; }
+  .card .with {
+    display: flex; align-items: center; gap: 2.5cqw;
+    font: italic 400 5cqw "Cormorant Garamond", serif; color: #a07a35;
+  }
+  .card .with::before, .card .with::after { content: ""; width: 12cqw; height: 1px; background: #b08a45; }
   /* itinerary inside an event */
   .event .schedule { list-style: none; margin: .9rem 0 0; padding: 0; }
   .event .schedule li { margin: 0 0 .7rem; line-height: 1.4; }
   .event .schedule b { display: block; font-weight: 600; color: var(--plum); }
-  .event .plain {
-    padding: 2.25rem 1.25rem 1.5rem;
-    border: 1px solid var(--gold); border-radius: 6px;
-    background: var(--paper);
-  }
-  .event .plain h3 { color: var(--plum); }
-  .event .plain .details { padding-top: 0; }
   .event .day { margin: 0 0 .25rem; font-weight: 600; }
 </style>
 </head>
@@ -216,18 +223,28 @@
   <section class="invocation">
     <p class="deva title">॥ श्री गणेशाय नमः ॥</p>
     <p class="deva shloka">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</p>
-    <p class="muted">Sri Vyadeshwar Prasanna<br>Sri Yogeshwari Prasanna</p>
+    <p class="muted">We seek the divine blessings of Lord Ganesha for a joyous beginning and a blessed journey ahead.</p>
   </section>
 
-  <section class="invite">
-    <svg class="flourish" viewBox="0 0 120 14" aria-hidden="true"><path d="M0 7h48M72 7h48" stroke="currentColor"/><path d="M60 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
-    <p class="hosts">Smt Tejaswini &amp; Sri Mahendra Sadashiv Godbole</p>
-    <p class="lead">request your gracious presence and blessings on the joyous occasion of the wedding of their daughter</p>
-    <p class="person-name">Chi. Sou. Akanksha</p>
-    <p class="kin muted">Granddaughter of Late Smt Uma &amp; Late Shri Sadashiv K Godbole and Smt Damayanti &amp; Shri Vasant Muley</p>
-    <p class="with">with</p>
-    <p class="person-name">Chi. Rishabh</p>
-    <p class="kin muted">Son of Smt Chhaya Singh &amp; Shri Rajendra Ramroop Singh</p>
+  <section class="card">
+    <figure>
+      <img src="images/invitation-blank.jpg" alt="" width="720" height="1280">
+      <div class="wording">
+        <p class="om">॥ ॐ ॥</p>
+        <svg class="rule" viewBox="0 0 120 10" aria-hidden="true"><path d="M0 5h50M70 5h50" stroke="currentColor"/><path d="M60 0l5 5-5 5-5-5z" fill="currentColor"/></svg>
+        <p class="deities">॥ Sri Vyadeshwar Prasanna ॥<br>॥ Sri Yogeshwari Prasanna ॥</p>
+        <svg class="rule" viewBox="0 0 120 10" aria-hidden="true"><path d="M0 5h50M70 5h50" stroke="currentColor"/><path d="M60 0l5 5-5 5-5-5z" fill="currentColor"/></svg>
+        <p class="hosts">Smt Tejaswini &amp;<br>Sri Mahendra Sadashiv Godbole</p>
+        <p class="small">request your gracious presence and blessings<br>at the wedding of their beloved daughter</p>
+        <svg class="rule" viewBox="0 0 120 10" aria-hidden="true"><path d="M0 5h50M70 5h50" stroke="currentColor"/><path d="M60 0l5 5-5 5-5-5z" fill="currentColor"/></svg>
+        <p class="name"><span>A</span>kanksha <span>G</span>odbole</p>
+        <p class="small">Granddaughter of<br>Late Smt Uma &amp; Late Shri Sadashiv K Godbole<br>and Smt Damayanti &amp; Shri Vasant Muley</p>
+        <p class="with">with</p>
+        <p class="name"><span>R</span>ishabh <span>S</span>ingh</p>
+        <p class="small">Son of Smt Chhaya Singh &amp;<br>Shri Rajendra Ramroop Singh</p>
+        <svg class="rule" viewBox="0 0 120 10" aria-hidden="true"><path d="M0 5h50M70 5h50" stroke="currentColor"/><path d="M60 0l5 5-5 5-5-5z" fill="currentColor"/></svg>
+      </div>
+    </figure>
   </section>
 
   <section class="story">
@@ -242,42 +259,34 @@
     <h2>Celebrations</h2>
 
     <article class="event">
-      <div class="plain">
-        <h3>Welcome of the Groom, Simant Pujan &amp; Vangnischay</h3>
-        <div class="details">
-          <p class="day">Wednesday, 25 November 2026</p>
-          <p>4:00 PM to 6:30 PM<br>Nakshatra Banquet Hall, Kalyan</p>
-        </div>
-      </div>
-      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Simant+Pujan+%26+Vangnischay+%E2%80%93+Akanksha+%26+Rishabh&amp;dates=20261125T103000Z/20261125T130000Z&amp;details=Welcome+of+the+Groom%2C+Simant+Pujan+and+Vangnischay&amp;location=Nakshatra+Banquet+Hall%2C+Kalyan+Sports+Club%2C+Durgadi+Birla+College+Road%2C+Kalyan+West+421301" target="_blank" rel="noopener">Add to Google Calendar</a>
-    </article>
-
-    <article class="event">
       <figure>
         <img src="images/sangeet.jpg" alt="Illustration of the couple dancing at the sangeet" width="720" height="1280">
         <figcaption style="--top: 21%; left: 19%; right: 19%">
-          <h3>Sangeet &amp; Mehendi</h3>
+          <h3>Simant Pujan, Mehendi &amp; Sangeet</h3>
         </figcaption>
       </figure>
       <div class="details">
+        <p class="tagline">An evening of music, joy and togetherness as we begin the celebrations.</p>
         <p class="day">Wednesday, 25 November 2026</p>
         <ul class="schedule">
-          <li><b>7:30 PM onwards</b>Sangeet and Mehendi</li>
+          <li><b>4:00 PM to 6:30 PM</b>Simant Pujan and Vangnischay</li>
+          <li><b>7:30 PM onwards</b>Mehendi and Sangeet</li>
           <li><b>8:30 PM onwards</b>Dinner</li>
         </ul>
-        <p>Nakshatra Banquet Hall, Kalyan</p>
+        <p>Nakshatra Banquet Hall, Kalyan West</p>
       </div>
-      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Sangeet+%26+Mehendi+%E2%80%93+Akanksha+%26+Rishabh&amp;dates=20261125T140000Z/20261125T173000Z&amp;details=Sangeet+and+Mehendi+from+7%3A30+PM%2C+dinner+from+8%3A30+PM&amp;location=Nakshatra+Banquet+Hall%2C+Kalyan+Sports+Club%2C+Durgadi+Birla+College+Road%2C+Kalyan+West+421301" target="_blank" rel="noopener">Add to Google Calendar</a>
+      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Simant+Pujan%2C+Mehendi+%26+Sangeet+%E2%80%93+Akanksha+%26+Rishabh&amp;dates=20261125T103000Z/20261125T173000Z&amp;details=Simant+Pujan+and+Vangnischay+4%3A00%E2%80%936%3A30+PM%2C+Mehendi+and+Sangeet+from+7%3A30+PM%2C+dinner+from+8%3A30+PM&amp;location=Nakshatra+Banquet+Hall%2C+Kalyan+Sports+Club%2C+Durgadi+Birla+College+Road%2C+Kalyan+West+421301" target="_blank" rel="noopener">Add to Google Calendar</a>
     </article>
 
     <article class="event">
       <figure>
         <img src="images/marathi-vivah.jpg" alt="Illustration of the couple in Marathi wedding attire" width="853" height="1280">
         <figcaption style="--top: 6%; left: 17%; right: 17%">
-          <h3>Muhurat &amp; Wedding Ceremonies</h3>
+          <h3>Marathi Vivah</h3>
         </figcaption>
       </figure>
       <div class="details">
+        <p class="tagline">A sacred union of traditions, blessings and new beginnings.</p>
         <p class="day">Thursday, 26 November 2026</p>
         <p class="muhurat">Muhurat: 9:15 AM</p>
         <ul class="schedule">
@@ -288,19 +297,20 @@
           <li><b>12:00 noon onwards</b>Lunch</li>
           <li><b>2:30 PM to 3:00 PM</b>Vihinichi Pangat, a traditional feast for the parents of the bride and groom</li>
         </ul>
-        <p>Nakshatra Banquet Hall, Kalyan</p>
+        <p>Nakshatra Banquet Hall, Kalyan West</p>
       </div>
-      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Muhurat+%26+Wedding+Ceremonies+%E2%80%93+Akanksha+%26+Rishabh&amp;dates=20261126T013000Z/20261126T093000Z&amp;details=Muhurat+at+9%3A15+AM&amp;location=Nakshatra+Banquet+Hall%2C+Kalyan+Sports+Club%2C+Durgadi+Birla+College+Road%2C+Kalyan+West+421301" target="_blank" rel="noopener">Add to Google Calendar</a>
+      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Marathi+Vivah+%E2%80%93+Akanksha+%26+Rishabh&amp;dates=20261126T013000Z/20261126T093000Z&amp;details=Muhurat+at+9%3A15+AM&amp;location=Nakshatra+Banquet+Hall%2C+Kalyan+Sports+Club%2C+Durgadi+Birla+College+Road%2C+Kalyan+West+421301" target="_blank" rel="noopener">Add to Google Calendar</a>
     </article>
 
     <article class="event">
       <figure>
         <img src="images/wedding.jpg" alt="Illustration of the couple in North Indian wedding attire beneath a sandstone arch" width="720" height="1280">
         <figcaption style="--top: 15%">
-          <h3>Rajput Wedding &amp; Reception</h3>
+          <h3>Wedding Ceremony &amp; Reception</h3>
         </figcaption>
       </figure>
       <div class="details">
+        <p class="tagline">A sacred union of two souls, joined in love, respect and forever.</p>
         <p class="day">Thursday, 26 November 2026</p>
         <ul class="schedule">
           <li><b>4:00 PM to 6:00 PM</b>Wedding ceremonies as per Rajput traditions</li>
@@ -309,16 +319,20 @@
         </ul>
         <p>Saxena Dream Lawns, Kalyan</p>
       </div>
-      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Rajput+Wedding+%26+Reception+%E2%80%93+Akanksha+%26+Rishabh&amp;dates=20261126T103000Z/20261126T180000Z&amp;details=Rajput+wedding+ceremonies+4%E2%80%936+PM%2C+reception+and+dinner+from+7%3A30+PM%2C+bidaai+from+10%3A30+PM&amp;location=Saxena+Dream+Lawns%2C+Gandhari%2C+Barave+Road%2C+Opp.+Mahada+Colony%2C+Godrej+Hill%2C+Khadakpada%2C+Kalyan+421301" target="_blank" rel="noopener">Add to Google Calendar</a>
+      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Wedding+Ceremony+%26+Reception+%E2%80%93+Akanksha+%26+Rishabh&amp;dates=20261126T103000Z/20261126T180000Z&amp;details=Rajput+wedding+ceremonies+4%E2%80%936+PM%2C+reception+and+dinner+from+7%3A30+PM%2C+bidaai+from+10%3A30+PM&amp;location=Saxena+Dream+Lawns%2C+Gandhari%2C+Barave+Road%2C+Opp.+Mahada+Colony%2C+Godrej+Hill%2C+Khadakpada%2C+Kalyan+421301" target="_blank" rel="noopener">Add to Google Calendar</a>
     </article>
 
     <article class="event">
-      <div class="plain">
-        <h3>Reception in Bengaluru</h3>
-        <div class="details">
-          <p class="day">Sunday, 6 December 2026</p>
-          <p>11:00 AM<br>Vasavi Mahal, Bengaluru</p>
-        </div>
+      <figure>
+        <img src="images/reception-bengaluru.jpg" alt="Illustration of a sandstone terrace with flowering vines overlooking a lotus pond with swans" width="720" height="950">
+        <figcaption style="--top: 9%; left: 18%; right: 18%">
+          <h3>Reception in Bengaluru</h3>
+        </figcaption>
+      </figure>
+      <div class="details">
+        <p class="tagline">A celebration with our family and friends in Bengaluru.</p>
+        <p class="day">Sunday, 6 December 2026</p>
+        <p>11:00 AM onwards<br>Vasavi Mahal, Basavanagudi, Bengaluru</p>
       </div>
       <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Reception+%E2%80%93+Akanksha+%26+Rishabh&amp;dates=20261206T053000Z/20261206T093000Z&amp;location=Vasavi+Mahal%2C+4+Vanivilas+Road%2C+3rd+Floor%2C+VV+Puram%2C+Basavanagudi%2C+Bengaluru+560004" target="_blank" rel="noopener">Add to Google Calendar</a>
     </article>
@@ -329,13 +343,13 @@
     <div class="venue">
       <h3>Nakshatra Banquet Hall</h3>
       <p>Kalyan Sports Club, near Adharwadi Chowk, Durgadi Birla College Road, Kalyan West, Kalyan 421 301</p>
-      <p class="muted">Simant Pujan, Sangeet &amp; Mehendi, Muhurat &amp; wedding ceremonies</p>
+      <p class="muted">Simant Pujan, Mehendi &amp; Sangeet, Marathi Vivah</p>
       <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Nakshatra+Banquet+Hall+Kalyan+Sports+Club+Durgadi+Birla+College+Road+Kalyan+West+421301" target="_blank" rel="noopener">Get directions</a>
     </div>
     <div class="venue">
       <h3>Saxena Dream Lawns</h3>
       <p>Gandhari, Barave Road, Opp. Mahada Colony, Godrej Hill, Khadakpada, Kalyan 421 301</p>
-      <p class="muted">Rajput wedding, reception &amp; bidaai</p>
+      <p class="muted">Wedding Ceremony &amp; Reception</p>
       <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Saxena+Dream+Lawns+Barave+Road+Godrej+Hill+Khadakpada+Kalyan+421301" target="_blank" rel="noopener">Get directions</a>
     </div>
     <div class="venue">
